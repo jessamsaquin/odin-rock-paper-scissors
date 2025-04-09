@@ -1,10 +1,13 @@
 console.log("Hello")
-
+const playButton = document.getElementById("play-button");
+const choiceButtons = document.getElementById("choice-buttons");
 let humanScore = 0;
 let compScore = 0;
 
-function play(){
-    console.log("Playyy")
+function start(){
+    playButton.style.display= "none"
+    choiceButtons.style.display = "block"
+    playGame();
 }
 
 

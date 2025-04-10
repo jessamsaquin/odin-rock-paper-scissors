@@ -3,11 +3,13 @@ const playButton = document.getElementById("play-button");
 const choiceButtons = document.getElementById("choice-buttons");
 let humanScore = 0;
 let compScore = 0;
+let level = 0;
 
 function start(){
     playButton.style.display= "none"
     choiceButtons.style.display = "block"
-    playGame();
+    playGame()
+    humanChoice()
 }
 
 
@@ -21,10 +23,14 @@ function compChoice(){
 
 function humanChoice(){
 
-    let userChoice = prompt("Rock, Paper or Scissors?");
-    userChoice = userChoice.toLowerCase();
+    const rock = document.getElementById("rock")
+    const paper = document.getElementById("paper")
+    const scissors = document.getElementById("scissors")
 
-    return userChoice;
+    
+    rock.addEventListener('click', () => playRound("rock", compChoice()));
+    paper.addEventListener('click', () => playRound("paper", compChoice()));
+    scissors.addEventListener('click', () => playRound("scissors", compChoice()));
 }
 
 
@@ -47,19 +53,27 @@ function playRound(humanChoice, compChoice){
         compScore++;
         console.log("Comp wins")
     }
-    console.log("")
+
+    level++;
+     console.log(`Round ${level}/5 - Score: You ${humanScore} Computer ${compScore}`)
+    
+     if (level === 5){
+        endGame()
+     }
+
+
+
 }
 
 function playGame(){
     humanScore = 0; 
     compScore = 0;
+    level =0;
 
-    for (let i = 0; i < 5; i++){
-        const humanSelect = humanChoice()
-        const compSelect = compChoice()
-
-        playRound(humanSelect, compSelect)
-    }
+    console.log("Game started")
+}
+function endGame(){
+    
 
     console.log("final result")
     console.log(`final score: Human ${humanScore} - Computer ${compScore}`);
@@ -72,4 +86,7 @@ function playGame(){
     }else{
         console.log("tie")
     }
+
+    playButton.style.display = "block";
+    choiceButtons.style.display = "none";
 }

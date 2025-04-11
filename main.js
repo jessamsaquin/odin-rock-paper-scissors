@@ -5,11 +5,21 @@ let humanScore = 0;
 let compScore = 0;
 let level = 0;
 
+
+
+const rock = document.getElementById("rock")
+const paper = document.getElementById("paper")
+const scissors = document.getElementById("scissors")
+
+
+rock.addEventListener('click', () => playRound("rock", compChoice()));
+paper.addEventListener('click', () => playRound("paper", compChoice()));
+scissors.addEventListener('click', () => playRound("scissors", compChoice()));
+
 function start(){
     playButton.style.display= "none"
     choiceButtons.style.display = "block"
     playGame()
-    humanChoice()
 }
 
 
@@ -21,24 +31,15 @@ function compChoice(){
 
 }  
 
-function humanChoice(){
 
-    const rock = document.getElementById("rock")
-    const paper = document.getElementById("paper")
-    const scissors = document.getElementById("scissors")
 
-    
-    rock.addEventListener('click', () => playRound("rock", compChoice()));
-    paper.addEventListener('click', () => playRound("paper", compChoice()));
-    scissors.addEventListener('click', () => playRound("scissors", compChoice()));
-}
 
 
 function playRound(humanChoice, compChoice){
     compChoice =  compChoice.toLowerCase();
     humanChoice =  humanChoice.toLowerCase();
-    
-
+    if (level >=5) return;
+ 
 
     if (humanChoice === compChoice){
         console.log("It's a tie!");
@@ -58,7 +59,7 @@ function playRound(humanChoice, compChoice){
      console.log(`Round ${level}/5 - Score: You ${humanScore} Computer ${compScore}`)
     
      if (level === 5){
-        endGame()
+        endGame();
      }
 
 
@@ -89,4 +90,7 @@ function endGame(){
 
     playButton.style.display = "block";
     choiceButtons.style.display = "none";
+    humanScore = 0; 
+    compScore = 0;
+    level =0;
 }

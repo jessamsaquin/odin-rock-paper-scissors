@@ -1,33 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scrissors</title>
+    <title>Arcade RPS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <header class="main-header">
-        <h1>Rock, Paper, Scissors</h1>
-
+        
+        <h2>🕹️ROCK PAPER SCISSORS🕹️</h2>
+        <div>
+            <span class="pacman-ghost" style="background-color: #FF0000;"></span>
+            <span class="pacman-ghost" style="background-color: #FFC0CB;"></span>
+            <span class="pacman-ghost" style="background-color: #00FFFF;"></span>
+            <span class="pacman-ghost" style="background-color: #FFA500;"></span>
+        </div>
     </header>
 
-    <div class="score">Human: 0 | Computer: 0</div>
+    <div class="score">PLAYER: 0 | CPU: 0</div>
 
     <section class="game-controls">
-        <button id="play-button" onclick="start()">Play</button>
+        <button id="play-button" onclick="start()">INSERT COIN</button>
   
         <div id="choice-buttons" style="display: none;">
-          <button class="choice" id="rock">Rock</button>
-          <button class="choice" id="paper">Paper</button>
-          <button class="choice" id="scissors">Scissors</button>
+            <div class="choice-buttons">
+                <button class="choice" id="rock">🪨</button>
+                <button class="choice" id="paper">🧻</button>
+                <button class="choice" id="scissors">✂️</button>
+            </div>
         </div>
-      </section>
+    </section>
 
-    
     <script src="main.js"></script>
 </body>
-
 </html>

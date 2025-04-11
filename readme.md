@@ -1,4 +1,4 @@
-# Rock Paper Scissors 🪨 📄 ✂️
+# Rock Paper Scissors 🪨 📄 ✂️ [Play Now](https://jessamsaquin.github.io/odin-rock-paper-scissors/)
 
 A browser-based Rock Paper Scissors game with retro arcade styling, built with HTML, CSS, and JavaScript.
 
@@ -18,4 +18,3 @@ A browser-based Rock Paper Scissors game with retro arcade styling, built with H
 - CSS3 (Flexbox, Media Queries)
 - JavaScript (DOM Manipulation)
 
-[Play Now](https://jessamsaquin.github.io/odin-rock-paper-scissors/)
